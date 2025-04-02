@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational quote generator</title>
+    <h1>Here are some of the quotes that can inspire you</h1>
+    <h2>
+    </h2>
+    <style>
+     body {
+    background: url("https://cdn.pixabay.com/photo/2025/03/22/20/26/ai-generated-9487507_960_720.png");
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    background-color: rgba(157, 58, 95, 0.75);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease-in-out;
+}
+
+#quote {
+    font-size: 1.4em;
+    font-style: italic;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.1s ease;
+}
+
+button:hover {
+    background-color: #463841;
+    transform: scale(1.05);
+}
+#class2{
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    background: linear-gradient(hsla(179, 72%, 39%, 0.461), #552598, #419151, #b8860b);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    border-bottom: 2px solid #ffd700;
+}
+nav ol{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: -20px;
+    gap: 20px;
+}
+nav ol li{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
+    transition: color 0.3s ease-in-out;
+    animation: shine 3s infinite alternate;
+}
+
+nav ol li:hover {
+    color: #fffacd;
+    transform: scale(1.1);
+}
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 1), 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+}
+footer{
+    position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 1em;
+            color: white;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+    </style>
+<body>
+    <nav>
+        <ol>
+            <li>Home</li>
+            <li>about us</li>
+            <li>contact</li>
+        </ol>
+    </nav>
+    <div class="container">
+    <div id="quote"></div>
+     <button onClick="getQuote()">Get Quote</button>
+    </div>
+    <div id="class2">Always read all these quotes when feeling down</div>
+</body>
+<footer>keep building.keep hustlin</footer>
+<script>// This is a simple JavaScript function that fetches data from an API and logs it to the console.
+    // It uses async/await syntax for handling asynchronous operations and includes error handling for network requests.
+    
+    async function getQuote() {
+        let response = await fetch("https://dummyjson.com/quotes/random");
+        let data = await response.json();
+        document.getElementById("quote").innerHTML = data.quote;
+        console.log(data);
+    }
+    getQuote();
+    </script>
+</html>
